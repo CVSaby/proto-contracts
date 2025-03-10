@@ -2,11 +2,12 @@ syntax = "proto3";
 
 package auth;
 
+
 option go_package = "sabymarket.sso.v1; ssov1";
 
-enum UserType {
-  customer = 0;
-  seller = 1;
+enum Role {
+  user = 0;
+  admin = 1;
 }
 
 service Auth {
@@ -17,7 +18,7 @@ service Auth {
 message RegisterRequest {
   string email = 1;
   string password = 2;
-  UserType user_type = 3;
+  Role user_type = 3;
 }
 
 message RegisterResponse {
