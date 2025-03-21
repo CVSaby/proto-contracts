@@ -17,8 +17,12 @@ service Auth {
 
 message RegisterRequest {
   string email = 1;
-  string password = 2;
-  Role user_type = 3;
+  string first_name = 2;
+  string last_name = 3;
+  string phone_number = 4;
+  string avatar_url = 5;
+  string password = 6;
+  Role user_type = 7;
 }
 
 message RegisterResponse {
