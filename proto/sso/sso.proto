@@ -13,6 +13,8 @@ enum Role {
 service Auth {
   rpc Register (RegisterRequest) returns (RegisterResponse);
   rpc Login (LoginRequest) returns (LoginResponse);
+  rpc IsUserExists (IsUserExistsRequest) returns (IsUserExistsResponse);
+  rpc IsValidJWT (IsValidJWTRequest) returns (IsValidJWTResponse);
 }
 
 message RegisterRequest {
@@ -36,4 +38,20 @@ message LoginRequest {
 
 message LoginResponse {
   string token = 1;
+}
+
+message IsUserExistsRequest {
+  string user_id = 1;
+}
+
+message IsUserExistsResponse {
+  bool exists = 1;
+}
+
+message IsValidJWTRequest {
+  string jwt = 1;
+}
+
+message IsValidJWTResponse {
+  bool exists = 1;
 }
