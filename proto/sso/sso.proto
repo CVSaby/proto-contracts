@@ -53,5 +53,5 @@ message IsValidJWTRequest {
 }
 
 message IsValidJWTResponse {
-  bool exists = 1;
+  bool valid = 1;
 }
